@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Primary Meta Tags -->
+  <title>Samuel Barbieri - Portfolio</title>
+  <meta name="title" content="Samuel Barbieri - Pomodoro" />
+  <meta name="description" content="This is a counter representing the practical project of the Javascript Basics course by stat2impact." />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://lonneww.github.io/pomodoro/" /> 
+  <meta property="og:title" content="Samuel Barbieri - Pomodoro" />
+  <meta property="og:description" content="This is a counter representing the practical project of the Javascript Basics course by stat2impact." />
+  <meta property="og:image" content="assets/img/og-image.png" /> 
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://lonneww.github.io/pomodoro/" />
+  <meta property="twitter:title" content="Samuel Barbieri - Portfolio" />
+  <meta property="twitter:description" content="This is a counter representing the practical project of the Javascript Basics course by stat2impact." />
+  <meta property="twitter:image" content="assets/img/og-image.png" /> 
+  <!-- Meta Tags Generated with https://metatags.io -->
+
+  <meta name="robots" content="noindex, noimageindex, nofollow"> 
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+  
+  <title>Samuel Barbieri - Pomodoro</title>
+  <link rel="icon" type="image/x-icon" href="/assets/img/tomato-icon.svg">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Website title -->
+    <h1>Pomodoro</h1>
+    <!-- Tomato image -->
+    <img id="pomodoro_icon" src="/assets/img/tomato-icon.svg" alt="Tomato image">
+    <!-- Inputs container -->
+    <div class="inputs_container">
+      <!-- Timer -->
+      <input id="minutes" onpointerdown="return false;" class="timer" value="00" type="text">
+      <span>:</span>
+      <input id="seconds" onpointerdown="return false;" class="timer" value="00" type="text">
+    </div>
+    <!-- Buttons -->
+    <div class="btns_container">
+      <button id="decrease_btn" class="button">-</button>
+      <button id="startReset_btn" class="button start">Start</button>
+      <button id="increase_btn" class="button">+</button>
+    </div>
+  </div>
+  <p>If you hold the shift key while pressing the button you will add/remove by 10!</p> </br>
+  <p>Learn more about the pomodoro technique <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">here</a>.</p>
+  <button id="muteButton" class="active"><img src="/assets/img/icons8-audio-48.png" alt=""></button>
+
+
+  <audio src="/assets/audio/tap-notification-180637.mp3" id="increaseEffect"></audio>
+  <audio src="/assets/audio/shooting-sound-fx-159024.mp3" id="decreaseEffect"></audio>
+  <audio loop src="/assets/audio/ticking.mp3" id="tickingEffect"></audio>
+  <audio src="/assets/audio/marimba-for-smartphone-151931.mp3" id="timerSound"></audio>
+
+  <script type="text/javascript" src="assets/js/script.js"></script>
+</body>
+</html>

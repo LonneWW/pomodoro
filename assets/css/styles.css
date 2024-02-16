@@ -1,0 +1,135 @@
+body {
+  background-color: #BA4949;
+  transition: all ease-in 0.5s;
+}
+
+.container {
+  width: 100%;
+  height: 85vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container h1 {
+  height: 10vh;
+  font-size: 5rem;
+  font-family: "Protest Riot", sans-serif;
+  color: ivory;
+}
+.container #pomodoro_icon {
+  position: absolute;
+  z-index: -1;
+  height: 55vh;
+  top: 15vh;
+}
+.container .inputs_container {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  top: 20vh;
+  color: ivory;
+  text-align: center;
+  font-size: 6vh;
+  font-family: "Protest Riot", sans-serif;
+}
+.container .inputs_container .timer {
+  height: 10vh;
+  width: 6vw;
+  min-width: 80px;
+  text-align: center;
+  font-size: 6vh;
+  font-family: "Protest Riot", sans-serif;
+  color: ivory;
+  background-color: #d65656;
+  border-radius: 15px;
+}
+.container .btns_container {
+  margin-top: 12vh;
+  width: 30vw;
+  position: relative;
+  top: 20vh;
+  display: flex;
+  justify-content: space-around;
+}
+.container .btns_container .button {
+  height: 12vh;
+  width: 8vw;
+  min-width: 100px;
+  border-radius: 25px;
+  background-color: #C15A5B;
+  font-size: 5vh;
+  font-family: "Protest Riot", sans-serif;
+  color: ivory;
+  border: 2mm double rgba(0, 0, 0, 0.253);
+}
+.container .btns_container .button:active {
+  background-color: #902121;
+}
+.container .btns_container .start {
+  background-color: #F23329 !important;
+}
+.container .btns_container .start:active {
+  background-color: #902121 !important;
+}
+.container .btns_container .reset {
+  background-color: #214d90 !important;
+}
+.container .btns_container .reset:active {
+  background-color: #142f58 !important;
+}
+
+.disable {
+  background-color: #144669;
+  pointer-events: none;
+  opacity: 60%;
+}
+
+p {
+  color: ivory;
+  font-family: "Protest Riot", sans-serif;
+  font-size: 3vh;
+  margin: 0px 20px;
+}
+p a {
+  color: ivory;
+}
+p a:hover {
+  color: #D61D1D;
+}
+
+#muteButton {
+  position: absolute;
+  top: 40px;
+  left: 90%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: #F23329;
+  border: 2mm double rgba(0, 0, 0, 0.253);
+}
+
+@media only screen and (max-width: 992px) {
+  .container h1 {
+    font-size: 8vh;
+  }
+  .container #pomodoro_icon {
+    max-width: 75vw;
+  }
+  .container .inputs_container .timer {
+    min-width: 20vw;
+  }
+  .container .btns_container .button {
+    min-width: 120px;
+    margin-right: 2vw;
+  }
+  .container .btns_container #startReset_btn {
+    font-size: 4vh;
+  }
+  p {
+    font-size: 15px;
+  }
+}/*# sourceMappingURL=styles.css.map */
