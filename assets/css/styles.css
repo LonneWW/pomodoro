@@ -1,5 +1,6 @@
 body {
   background-color: #BA4949;
+  transition: all ease-in 0.5s;
 }
 
 .container {
@@ -60,9 +61,28 @@ body {
   font-size: 5vh;
   font-family: "Protest Riot", sans-serif;
   color: ivory;
+  border: 2mm double rgba(0, 0, 0, 0.253);
 }
-.container .btns_container #startReset_btn {
-  background-color: #F23329;
+.container .btns_container .button:active {
+  background-color: #902121;
+}
+.container .btns_container .start {
+  background-color: #F23329 !important;
+}
+.container .btns_container .start:active {
+  background-color: #902121 !important;
+}
+.container .btns_container .reset {
+  background-color: #214d90 !important;
+}
+.container .btns_container .reset:active {
+  background-color: #142f58 !important;
+}
+
+.disable {
+  background-color: #144669;
+  pointer-events: none;
+  opacity: 60%;
 }
 
 p {
@@ -78,18 +98,18 @@ p a:hover {
   color: #D61D1D;
 }
 
-.disable {
-  background-color: #144669 !important;
-  pointer-events: none;
-  opacity: 60%;
-}
-
-.reset {
-  background-color: #D61D1D !important;
-}
-
-body {
-  transition: all ease-in 0.5s;
+#muteButton {
+  position: absolute;
+  top: 40px;
+  left: 90%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px;
+  background-color: #F23329;
+  border: 2mm double rgba(0, 0, 0, 0.253);
 }
 
 @media only screen and (max-width: 992px) {

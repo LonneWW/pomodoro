@@ -1,6 +1,8 @@
 body{
   background-color: #BA4949;
+  transition: all ease-in 0.5s;
 }
+
 .container{
   width: 100%;
   height: 85vh;
@@ -8,18 +10,21 @@ body{
   display: flex;
   flex-direction: column;
   align-items: center;
+
   h1{
     height: 10vh;
     font-size: 5rem; //DA CAMBIARE IN @MEDIA
     font-family: 'Protest Riot', sans-serif;
     color: ivory;
   }
+
   #pomodoro_icon {
     position: absolute;
     z-index: -1;
     height: 55vh;
     top: 15vh;
   }
+
   .inputs_container{
     display: flex;
     justify-content: center;
@@ -28,7 +33,8 @@ body{
     color: ivory;    
     text-align: center;
     font-size: 6vh;
-    font-family: 'Protest Riot', sans-serif;  
+    font-family: 'Protest Riot', sans-serif; 
+    
     .timer{
       height: 10vh; //DA CAMBIARE IN @MEDIA
       width: 6vw; //DA CAMBIARE IN @MEDIA
@@ -41,34 +47,60 @@ body{
       border-radius: 15px;
     }
   }
+
   .btns_container{
     margin-top: 12vh; //DA CAMBIARE IN @MEDIA
     width: 30vw; //DA CAMBIARE IN @MEDIA
     position: relative;
     top: 20vh;
-      display: flex;
-      justify-content: space-around;
-      .button{
-        height: 12vh; //DA CAMBIARE IN @MEDIA
-        width: 8vw; //DA CAMBIARE IN @MEDIA
-        min-width: 100px;
-        border-radius: 25px; //DA CAMBIARE IN @MEDIA
-        background-color: #C15A5B;
-        font-size: 5vh;
-        font-family: 'Protest Riot', sans-serif;
-        color: ivory;
-      }
-      #startReset_btn{
-        background-color: #F23329;
-      }
+    display: flex;
+    justify-content: space-around;
+
+    .button{
+      height: 12vh; //DA CAMBIARE IN @MEDIA
+      width: 8vw; //DA CAMBIARE IN @MEDIA
+      min-width: 100px;
+      border-radius: 25px; //DA CAMBIARE IN @MEDIA
+      background-color: #C15A5B;
+      font-size: 5vh;
+      font-family: 'Protest Riot', sans-serif;
+      color: ivory;
+      border: 2mm double rgba(0, 0, 0, 0.253);
     }
+    .button:active{
+      background-color: #902121;
+    }
+
+    .start{
+      background-color: #F23329 !important;
+    }
+    .start:active{
+      background-color:  #902121 !important;
+    }
+
+    .reset{
+      background-color: #214d90 !important;
+    }
+    .reset:active{
+      background-color: #142f58 !important;
+    }
+  }
 }
+
+//outside container because it's also used for audio control
+.disable{
+  background-color: #144669; 
+  pointer-events: none;
+  opacity: 60%;
+}
+
 
 p {
   color: ivory;
   font-family: "Protest Riot", sans-serif;
   font-size: 3vh;
   margin: 0px 20px;
+
   a{
     color: ivory;
   }
@@ -77,18 +109,18 @@ p {
   }
 }
 
-.disable{
-  background-color: #144669 !important; 
-  pointer-events: none;
-  opacity: 60%;
-}
-
-.reset{
-  background-color: #D61D1D !important;
-}
-
-body{
-  transition: all ease-in 0.5s;
+#muteButton{
+  position: absolute;
+  top: 40px;
+  left: 90%;
+  width: 65px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 25px; //DA CAMBIARE IN @MEDIA
+  background-color: #F23329;
+  border: 2mm double rgba(0, 0, 0, 0.253);
 }
 
 @media only screen and (max-width:992px) {
