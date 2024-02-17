@@ -123,7 +123,8 @@ p {
   border: 2mm double rgba(0, 0, 0, 0.253);
 }
 
-@media only screen and (max-width:992px) {
+//mobile vertical
+@media only screen and (max-width:430px) {
   .container{
     h1{
       font-size: 8vh;
@@ -137,16 +138,65 @@ p {
       }
     }
     .btns_container{
+      justify-content: space-around;
       .button{
+        width: 20%;
         min-width: 120px;
-        margin-right: 2vw;
       }
       #startReset_btn{
         font-size: 4vh;
+        margin: 0px 5px;
       }
     }
   }
+  #muteButton{
+    top: 20vh;
+    left: 80%;
+  }
   p{
+    margin: 0px 10px;
+    font-size: 15px;
+  }
+}
+
+//mobile horizontal
+@media only screen and (max-width:1024px){
+  .container{
+    h1{
+      font-size: 8vh;
+    }
+    #pomodoro_icon{
+      max-width: 75vw;
+    }
+    .inputs_container{
+      .timer{
+        width: 20vw;
+        max-width: 100px;
+      }
+    }
+    .btns_container{
+      .button{
+        width: 20%;
+        min-width: 120px;
+      }
+      #startReset_btn{
+        font-size: 4vh;
+        margin: 0px 5px;
+      }
+    }
+  }
+  #muteButton{
+    top: 20vh;
+    left: 80%;
+    max-height: 45px;
+    max-width: 45px;
+    img{
+      max-height: 30px;
+      max-width: 30px;
+    }
+  }
+  p{
+    margin: -10px 10px;
     font-size: 15px;
   }
 }
