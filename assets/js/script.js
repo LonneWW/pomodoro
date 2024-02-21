@@ -3,10 +3,11 @@ let minutes = document.getElementById("minutes");
 let seconds = document.getElementById("seconds");
 
 //changing value on the click of buttons
+let buttonsContainer = document.querySelector(".btns_container"); //container of the buttons. needed for event delegation
 let decreaseBtn = document.getElementById("decrease_btn");
 let increaseBtn = document.getElementById("increase_btn");
 let startResetBtn = document.getElementById("startReset_btn");
-let buttonsContainer = document.querySelector(".btns_container"); //container of the buttons. needed for event delegation
+let shiftBtn = document.getElementById("shift");
 
 //sound effects
 let increaseEffect = document.getElementById("increaseEffect");
@@ -25,7 +26,7 @@ let muteButton = document.getElementById("muteButton");
 buttonsContainer.onclick = function(event) {
   //the multiplier variable rappresent if we are going to decrease/increase the tens digits or the single minute
   let multiplier;
-  if (event.shiftKey){
+  if (event.shiftKey || shiftBtn.classList.contains("active")){
     multiplier=10;
   } else {
     multiplier=1;
@@ -76,7 +77,7 @@ let timer = function (event, x) {
       }
       return;
     };
-  if (minutes.value<10 && event.target.id){ //if the value is <10 (and the click is not on the container element), add a 0 to maintain the double digits
+  if (minutes.value<10 && (event.target.id === increaseBtn.id || event.target.id === decreaseBtn.id)){ //if the value is <10 (and the click is not on the container element), add a 0 to maintain the double digits
     minutes.value = "0" + minutes.value;
   };
 };
@@ -125,6 +126,7 @@ let afterStart = function(){
   if (Number(minutes.value) == 0 && Number(seconds.value)==0) {return false}; // prevent the changes of styles if both minutes and seconds are 0 
   decreaseBtn.classList.add("disable");
   increaseBtn.classList.add("disable");
+  shiftBtn.classList.add("disable");
   muteButton.classList.add("disable");
   document.body.style.background = "#1D567F";
 };
@@ -132,6 +134,7 @@ let afterStart = function(){
 let timesOff = function() {
   decreaseBtn.classList.remove("disable");
   increaseBtn.classList.remove("disable");
+  shiftBtn.classList.remove("disable");
   muteButton.classList.remove("disable");
   document.body.style.background = "#BA4949";
 }
@@ -147,3 +150,12 @@ muteButton.onclick = () => {
   }
 }
 
+shiftBtn.onclick = () => {
+  if (shiftBtn.classList.contains("active")) {
+    shiftBtn.style.background = "#902121";
+    shiftBtn.classList.remove("active");
+  } else {
+    shiftBtn.style.background = "#F23329";
+    shiftBtn.classList.add("active");
+  }
+}

@@ -32,9 +32,9 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
+  <!-- Website title -->
+  <h1>Pomodoro</h1>
   <div class="container">
-    <!-- Website title -->
-    <h1>Pomodoro</h1>
     <!-- Tomato image -->
     <img id="pomodoro_icon" src="assets/img/tomatoImage.svg" alt="Tomato image">
     <!-- Inputs container -->
@@ -44,16 +44,18 @@
       <span>:</span>
       <input id="seconds" onpointerdown="return false;" class="timer" value="00" type="text">
     </div>
-    <!-- Buttons -->
-    <div class="btns_container">
-      <button id="decrease_btn" class="button">-</button>
-      <button id="startReset_btn" class="button start">Start</button>
-      <button id="increase_btn" class="button">+</button>
-    </div>
+
   </div>
-  <p>If you hold the shift key while pressing the button you will add/remove by 10! </br>
+      <!-- Buttons -->
+      <div class="btns_container">
+        <button id="decrease_btn" class="button">-</button>
+        <button id="startReset_btn" class="button start">Start</button>
+        <button id="increase_btn" class="button">+</button>
+        <button id="shift" class="">Shift</button>
+      </div>
+  <p>You can add/remove by 10 using the Shift key! </br>
     Learn more about the pomodoro technique <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank">here</a>.</p>
-  <button id="muteButton" class="active"><img src="assets/img/volumeIcon.png" alt=""></button>
+  <button id="muteButton" class="unmute"><img src="assets/img/deadline.png" alt="stopwatch"></button>
 
 
   <audio src="assets/audio/increaseEffect.mp3" id="increaseEffect"></audio>

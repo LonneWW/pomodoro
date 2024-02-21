@@ -1,82 +1,73 @@
 body {
   background-color: #BA4949;
+  font-family: "Protest Riot", sans-serif;
+  color: ivory;
+  text-align: center;
   transition: all ease-in 0.5s;
 }
 
 .container {
-  width: 100%;
-  height: 85vh;
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.container h1 {
-  height: 10vh;
-  font-size: 5rem;
-  font-family: "Protest Riot", sans-serif;
-  color: ivory;
-}
 .container #pomodoro_icon {
   position: absolute;
   z-index: -1;
-  height: 55vh;
-  top: 15vh;
 }
 .container .inputs_container {
+  position: relative;
   display: flex;
   justify-content: center;
-  position: relative;
-  top: 20vh;
-  color: ivory;
-  text-align: center;
-  font-size: 6vh;
-  font-family: "Protest Riot", sans-serif;
 }
 .container .inputs_container .timer {
-  height: 10vh;
-  width: 6vw;
-  min-width: 80px;
-  text-align: center;
-  font-size: 6vh;
   font-family: "Protest Riot", sans-serif;
   color: ivory;
+  text-align: center;
   background-color: #d65656;
-  border-radius: 15px;
+  border-radius: 3rem;
+  border: solid 2px #902121;
 }
-.container .btns_container {
-  margin-top: 12vh;
-  width: 30vw;
+
+.btns_container {
   position: relative;
-  top: 20vh;
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
-.container .btns_container .button {
-  height: 12vh;
-  width: 8vw;
-  min-width: 100px;
-  border-radius: 25px;
+.btns_container .button {
+  border-radius: 2rem;
   background-color: #C15A5B;
-  font-size: 5vh;
   font-family: "Protest Riot", sans-serif;
   color: ivory;
   border: 2mm double rgba(0, 0, 0, 0.253);
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
 }
-.container .btns_container .button:active {
+.btns_container .button:active {
   background-color: #902121;
 }
-.container .btns_container .start {
+.btns_container .start {
   background-color: #F23329 !important;
 }
-.container .btns_container .start:active {
+.btns_container .start:active {
   background-color: #902121 !important;
 }
-.container .btns_container .reset {
+.btns_container .reset {
   background-color: #214d90 !important;
 }
-.container .btns_container .reset:active {
+.btns_container .reset:active {
   background-color: #142f58 !important;
+}
+
+#shift {
+  display: none;
+  position: absolute;
+  font-family: "Protest Riot", sans-serif;
+  text-align: center;
+  border-radius: 25px;
+  background-color: #902121;
+  border: 2mm double rgba(0, 0, 0, 0.253);
 }
 
 .disable {
@@ -86,10 +77,8 @@ body {
 }
 
 p {
-  color: ivory;
-  font-family: "Protest Riot", sans-serif;
-  font-size: 3vh;
-  margin: 0px 20px;
+  position: absolute;
+  text-align: left;
 }
 p a {
   color: ivory;
@@ -100,10 +89,10 @@ p a:hover {
 
 #muteButton {
   position: absolute;
-  top: 40px;
-  left: 90%;
-  width: 65px;
-  height: 65px;
+  top: 200px;
+  left: 70%;
+  width: 80px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,68 +100,134 @@ p a:hover {
   background-color: #F23329;
   border: 2mm double rgba(0, 0, 0, 0.253);
 }
+#muteButton img {
+  height: 65px;
+  width: 65px;
+}
 
-@media only screen and (max-width: 430px) {
-  .container h1 {
-    font-size: 8vh;
+@media only screen and (min-width: 1000px) {
+  h1 {
+    margin-bottom: 6vh;
+    font-size: 5rem;
+  }
+  .container {
+    height: 55vh;
+    width: 100%;
   }
   .container #pomodoro_icon {
-    max-width: 75vw;
+    top: -3vh;
+    height: 55vh;
+  }
+  .container .inputs_container {
+    top: 25vh;
+    font-size: 7vh;
   }
   .container .inputs_container .timer {
-    min-width: 20vw;
+    height: 10vh;
+    width: 6vw;
+    min-width: 80px;
+    font-size: 6vh;
   }
-  .container .btns_container {
-    justify-content: space-around;
+  .btns_container {
+    width: 30vw;
+    min-width: 375px;
+    margin: auto;
   }
-  .container .btns_container .button {
-    width: 20%;
-    min-width: 120px;
-  }
-  .container .btns_container #startReset_btn {
+  .btns_container .button {
+    height: 12vh;
+    width: 8vw;
+    min-width: 100px;
+    border-radius: 2rem;
     font-size: 4vh;
-    margin: 0px 5px;
   }
-  #muteButton {
-    top: 20vh;
-    left: 80%;
+  #shift {
+    display: none;
   }
   p {
-    margin: 0px 10px;
-    font-size: 15px;
-  }
-}
-@media only screen and (max-width: 1024px) {
-  .container h1 {
-    font-size: 8vh;
-  }
-  .container #pomodoro_icon {
-    max-width: 75vw;
-  }
-  .container .inputs_container .timer {
-    width: 20vw;
-    max-width: 100px;
-  }
-  .container .btns_container .button {
-    width: 20%;
-    min-width: 120px;
-  }
-  .container .btns_container #startReset_btn {
-    font-size: 4vh;
-    margin: 0px 5px;
+    margin: 0 20px;
+    top: 90vh;
+    font-size: 20px;
   }
   #muteButton {
-    top: 20vh;
-    left: 80%;
-    max-height: 45px;
-    max-width: 45px;
+    top: 200px;
+    left: 70%;
+    width: 80px;
+    height: 80px;
   }
   #muteButton img {
-    max-height: 30px;
-    max-width: 30px;
+    height: 65px;
+    width: 65px;
+  }
+}
+@media only screen and (max-width: 1368px) {
+  h1 {
+    margin-bottom: 6vh;
+    font-size: 2em;
+  }
+  .container {
+    height: 50vh;
+  }
+  .container #pomodoro_icon {
+    height: 45vh;
+    max-width: 80vw;
+  }
+  .container .inputs_container {
+    top: 20vh;
+    font-size: 7vh;
+  }
+  .container .inputs_container .timer {
+    height: 10vh;
+    width: 6vw;
+    min-width: 80px;
+    font-size: 6vh;
+  }
+  .btns_container {
+    width: 30vw;
+    min-width: 375px;
+    margin: auto;
+  }
+  .btns_container .button {
+    height: 12vh;
+    width: 8vw;
+    min-width: 100px;
+    border-radius: 2rem;
+    font-size: 4vh;
   }
   p {
-    margin: -10px 10px;
-    font-size: 15px;
+    margin: -10px 20px;
+    top: 90vh;
+    font-size: 18px;
+  }
+  #muteButton {
+    top: 20vh;
+    left: 80%;
+    width: 60px;
+    height: 60px;
+  }
+  #muteButton img {
+    height: 45px;
+    width: 45px;
+  }
+  #shift {
+    display: initial !important;
+    top: -45px;
+    height: 40px;
+    width: 60px;
+  }
+}
+@media (orientation: portrait) and (min-height: 1000px), (orientation: portrait) and (min-width: 1000px) {
+  .container .inputs_container .timer {
+    width: 14vw;
+  }
+  .btns_container {
+    width: 65%;
+  }
+  .btns_container .button {
+    width: 15vw;
+    border-radius: 25%;
+  }
+  #shift {
+    min-height: 20px;
+    min-width: 40px;
   }
 }/*# sourceMappingURL=styles.css.map */
