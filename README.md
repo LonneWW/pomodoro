@@ -28,7 +28,7 @@
 
 <h3 align="center">My Personal Pomodoro</h3>
 
-<h5 href="https://lonneww.github.io/pomodoro/" align="center"> For the site click here</h5>
+[To the site, click here!](https://lonneww.github.io/pomodoro/)
 
   <p align="center">
     This project is the pratical exam of the Javascript Basics start2impact University's course. </br>
@@ -94,7 +94,7 @@ You also can choose to remove the ticking sound of the timer to better concentra
 When you are ready, press the start button to start the timer and, if you ever need to reset it, press it again. </br>
 At the and of the "pomodoro", a "Great job" alert will appear.
 
-[![Product Name Screen Shot][product-screenshot]](assets/img/preview.png)
+![Website Preview](assets/img/preview.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
