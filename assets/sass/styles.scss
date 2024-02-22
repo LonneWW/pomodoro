@@ -76,7 +76,7 @@ body{
   border: 2mm double rgba(0, 0, 0, 0.253);
 }
 
-//outside container because it's also used for audio control
+//outside container because it's also used by audio control element
 .disable{
   background-color: #144669; 
   pointer-events: none;

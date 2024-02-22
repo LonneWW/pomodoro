@@ -38,7 +38,7 @@ startResetBtn.classList.add("start");
 startResetBtn.id = "startResetBtn"
 buttonsContainer.append(startResetBtn);
 
-increaseBtn.innerHTML = "-";
+increaseBtn.innerHTML = "+";
 increaseBtn.className = "button";
 increaseBtn.id = "increaseBtn";
 buttonsContainer.append(increaseBtn);
@@ -184,6 +184,7 @@ muteButton.onclick = () => {
   }
 }
 
+//shift button for mobile/tablet users
 shiftBtn.onclick = () => {
   if (shiftBtn.classList.contains("active")) {
     shiftBtn.style.background = "#902121";
