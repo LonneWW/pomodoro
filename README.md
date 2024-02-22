@@ -28,13 +28,16 @@
 
 <h3 align="center">My Personal Pomodoro</h3>
 
+<h5 href="https://lonneww.github.io/pomodoro/" align="center"> For the site click here</h5>
+
   <p align="center">
-    This project is the pratical exam of the Javascript Basics start2impact University's course. The task was to create a "counter" application where the user could increase or decrease the visible number by pressing one of the buttons.
+    This project is the pratical exam of the Javascript Basics start2impact University's course. </br>
+    The task was to create a "counter" application where the user could increase or decrease the visible number by pressing one of the buttons.
      Since I often use the pomodoro tecnique to study I thought it will be more interesting, challenging and generally useful to create a timer instead of a simple counter.
   </p>
 </div>
 
-<a href="https://lonneww.github.io/pomodoro/"> Give it a look! </a>
+
 
 
 <!-- TABLE OF CONTENTS -->
@@ -61,7 +64,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="assets/img/ogimage.png" alt="Project Image" width="1200" height="630">
+![Website Image](assets/img/ogImage.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,7 +94,7 @@ You also can choose to remove the ticking sound of the timer to better concentra
 When you are ready, press the start button to start the timer and, if you ever need to reset it, press it again. </br>
 At the and of the "pomodoro", a "Great job" alert will appear.
 
-[![Product Name Screen Shot][product-screenshot]](https://lonneww.github.io/pomodoro/assets/img/ogImage.png)
+[![Product Name Screen Shot][product-screenshot]](assets/img/preview.png)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
