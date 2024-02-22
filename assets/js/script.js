@@ -1,13 +1,47 @@
-//timer 
-let minutes = document.getElementById("minutes");
-let seconds = document.getElementById("seconds");
+//timer inputs
+let inputs_container = document.querySelector(".inputs_container");
+let minutes = document.createElement("input");
+let seconds = document.createElement("input");
 
-//changing value on the click of buttons
+
+//timer inputs' styles function
+let timerInputsStyles = (input) => {
+  input.className = "timer";
+  input.setAttribute(`value`, `00`);
+  input.setAttribute(`type`, `text`);
+  input.setAttribute(`onpointerdown`, `return false;`);
+}
+
+//giving each timer inputs styles and insterting them in the doc
+timerInputsStyles(minutes);
+inputs_container.prepend(minutes);
+
+timerInputsStyles(seconds);
+inputs_container.append(seconds);
+
+//timer buttons
 let buttonsContainer = document.querySelector(".btns_container"); //container of the buttons. needed for event delegation
-let decreaseBtn = document.getElementById("decrease_btn");
-let increaseBtn = document.getElementById("increase_btn");
-let startResetBtn = document.getElementById("startReset_btn");
+let decreaseBtn = document.createElement("button");
+let increaseBtn = document.createElement("button");
+let startResetBtn = document.createElement("button");
 let shiftBtn = document.getElementById("shift");
+
+//giving each timer buttons styles, ids and than insterting them in the doc. ids are necessary for the handler below
+decreaseBtn.innerHTML = "-";
+decreaseBtn.className = "button";
+decreaseBtn.id = "decreaseBtn";
+buttonsContainer.append(decreaseBtn);
+
+startResetBtn.innerHTML = "Start";
+startResetBtn.classList.add("button");
+startResetBtn.classList.add("start");
+startResetBtn.id = "startResetBtn"
+buttonsContainer.append(startResetBtn);
+
+increaseBtn.innerHTML = "-";
+increaseBtn.className = "button";
+increaseBtn.id = "increaseBtn";
+buttonsContainer.append(increaseBtn);
 
 //sound effects
 let increaseEffect = document.getElementById("increaseEffect");
@@ -41,7 +75,7 @@ let timer = function (event, x) {
   let value = Number(minutes.value); //changing the value from string to number to better operate
   switch (targetId){
     //if the "-" button is pressed, then...
-    case decreaseBtn.getAttribute(`id`): 
+    case decreaseBtn.id: 
       if (minutes.value == 0) {minutes.value = 0; break;}; //prevent negative numbers
       if (minutes.value <= 10 && x == 10) {minutes.value = 0; break;}; //prevent negative numbers
       decreaseEffect.play();
@@ -49,14 +83,14 @@ let timer = function (event, x) {
       break;
     
     //if the "+" button is pressed, then...
-    case increaseBtn.getAttribute(`id`):
+    case increaseBtn.id:
       minutes.value=value+x; //increase by the correct multiplier
       if (minutes.value>=60) {minutes.value = 60;}; //cap to 60 minutes
       if (minutes.value != 60) {increaseEffect.play()};
       break;
 
     //if "start/reset" button is pressed, then...    
-    case startResetBtn.getAttribute(`id`):
+    case startResetBtn.id:
       //start option
       afterStart();
       if (startResetBtn.classList.contains("start")){
