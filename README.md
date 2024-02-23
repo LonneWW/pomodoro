@@ -72,10 +72,11 @@
 
 ### Built With
 
-* ![HTML5](https://img.shields.io/badge/HTML-grey?style=flat&logo=html5&logoColor=%23E34F26)
-* ![CSS](https://img.shields.io/badge/CSS-grey?style=flat&logo=css3&logoColor=%231572B6)
-* ![SASS](https://img.shields.io/badge/SASS-grey?style=flat&logo=sass&logoColor=%23CC6699)
-* ![JS](https://img.shields.io/badge/Javascript-grey?style=flat&logo=javascript&logoColor=%23F7DF1E)
+* [![HTML5][html-badge]][html-url]
+* [![CSS][css-badge]][css-url]
+* [![SASS][sass-badge]][sass-url]
+* [![JS][js-badge]][js-url]
+
 
   
 </br>
@@ -148,6 +149,16 @@ So, this is it, hope you liked the project. </br>
 If you'd like to spend some of your time to tell me what you think about it or maybe give me some hints to how you would optimize things, I'll be very, very grateful.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+[html-badge]: https://img.shields.io/badge/HTML-grey?style=flat&logo=html5&logoColor=%23E34F26
+[html-url]: https://html.it
+[css-badge]: https://img.shields.io/badge/CSS-grey?style=flat&logo=css3&logoColor=%231572B6
+[css-url]: https://www.w3schools.com/css/
+[sass-badge]: https://img.shields.io/badge/SASS-grey?style=flat&logo=sass&logoColor=%23CC6699
+[sass-url]: https://sass-lang.com
+[js-badge]: https://img.shields.io/badge/Javascript-grey?style=flat&logo=javascript&logoColor=%23F7DF1E
+[js-url]: https://www.w3schools.com/js/
 
 [site-badge]: https://img.shields.io/badge/Website-grey?style=flat
 [site-url]: https://lonneww.github.io/portfolio/
