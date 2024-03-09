@@ -1,10 +1,10 @@
-//creating or selecting timer inputs (inputs intended as the numbers of the timer)
+//creating or selecting timer inputs (inputs are intended as the numbers of the timer)
 let inputs_container = document.querySelector(".inputs_container");
 let minutes = document.createElement("input");
 let seconds = document.createElement("input");
 
 
-//function that gives timer inputs their "default" styles
+//function that gives timer inputs their "default" attributes and style
 let timerInputsStyles = (input) => {
   input.className = "timer";
   input.setAttribute(`value`, `00`);
@@ -12,21 +12,16 @@ let timerInputsStyles = (input) => {
   input.setAttribute(`onpointerdown`, `return false;`);
 }
 
-//giving each timer inputs styles and insterting them in the doc
+//giving each timer inputs attributes, styles and than insterting them in the doc
 timerInputsStyles(minutes);
 inputs_container.prepend(minutes);
-
 timerInputsStyles(seconds);
 inputs_container.append(seconds);
 
-//creating or selecting timer buttons (buttons that changes the value of the timer or makes it start)
+//creating or selecting timer buttons (buttons that change the value of the timer or makes it start)
 let buttonsContainer = document.querySelector(".btns_container"); //container of the buttons. needed for event delegation
 let btnsArray = ["decreaseBtn", "increaseBtn", "startResetBtn"];  //array for iterate the next function
-
 let shiftBtn = document.getElementById("shift");
-
-//selecting the button that mutes the ticking in the timer (the one on the upper right). it is not contained in "buttonsContainer"
-let tickingButton = document.getElementById("tickingButton");
 
 // function that create a button, gives innerHTML, classes and id. ids are necessary for the handler below (called "timer")
 let createTimerButton = function(elem, btnInnerHTML, classesName, id){
@@ -44,6 +39,8 @@ createTimerButton("decreaseBtn", "-", ["button"], "decreaseBtn");
 createTimerButton("startResetBtn", "Start", ["button", "start"], "startResetBtn");
 createTimerButton("increaseBtn", "+", ["button"], "increaseBtn");
 
+//selecting the button that mutes the ticking in the timer (the one on the upper right). it is not contained in "buttonsContainer"
+let tickingButton = document.getElementById("tickingButton");
 
 //selectiong sound effects and decrease their volumes
 let increaseEffect = document.getElementById("increaseEffect");
@@ -65,12 +62,12 @@ buttonsContainer.onclick = function(event) {
   } else {
     multiplier=1;
   };
-  //calling the decreasing/increasing function
-  timer(event, multiplier);
+  //calling the function that handles the clicks on the timer buttons (contained in buttonsContainer)
+  onTimerButtonsClick(event, multiplier);
 };
 
-//function that handles the entire timer. based on the id of the pressed button, it increase/decrease the value of the timer or it makes it start
-let timer = function (event, x) {
+////calling the function that handles the clicks on the timer buttons (contained in buttonsContainer). based on the id of the pressed button, it change the "multiplier", increase/decrease the value of the timer or it makes it start
+let onTimerButtonsClick = function (event, x) {
   let targetId = event.target.id;
   let value = Number(minutes.value); //changing the value from string to number to better operate
   switch (targetId){
@@ -103,7 +100,7 @@ let timer = function (event, x) {
 
     //if "start/reset" button is pressed, then...    
     case startResetBtn.id:
-      afterStart(); //function that disables the buttons except for the reset one
+      onTimerStart(); //function that disables the buttons except for the reset one
       if (startResetBtn.classList.contains("start")){ //if the button cointains the class start, which indicates that the timer has not started yet
         if (Number(minutes.value) == 0 && Number(seconds.value) == 0) {return false;}; // Prevent the start if both minutes and seconds are 0 
         timerStart(); //function that each seconds subtract seconds or minutes to their respective values and, at the end of the timer, changes the class (styles) of the start/reset button, play the jingle and run the alert
@@ -113,7 +110,7 @@ let timer = function (event, x) {
         startResetBtn.classList.add("reset");
       } else { 
         //if the button does not cointain the class start, than the timer will reset
-        timesOff(); //function that, at the end of the timer, changes the classes of the buttons and the background color to their previous value
+        onTimerEnd(); //function that, at the end of the timer, changes the classes of the buttons and the background color to their previous value
         minutes.value = "0"+0; //reset value of both minutes and seconds to stop the timer
         seconds.value = "0"+0;
         startResetBtn.classList.remove("reset"); //change the styles to theirs origins
@@ -137,7 +134,7 @@ let timerStart = function (){
             startResetBtn.classList.remove("reset"); //change style things
             startResetBtn.innerHTML = "Start"
             startResetBtn.classList.add("start");
-            timesOff(); //function that, at the end of the timer, changes the classes of the buttons and the background color to their previous value
+            onTimerEnd(); //function that, at the end of the timer, changes the classes of the buttons and the background color to their previous value
             timerSound.play(); //play the end of pomodoro jingle
             setTimeout(function() { //alert starts (with a little delay)
               alert(("Time's up! Great job keeping it up with the hard work!"));
@@ -163,8 +160,8 @@ let timerStart = function (){
 //array containing buttons that should be disabled when the timer is ticking.
 btnsArray = [decreaseBtn, increaseBtn, shiftBtn, tickingButton];
 
-//function that, after timer starts, changes the classes of the buttons and the background color
-let afterStart = function(){
+//function that, on timer starts, changes the classes of the buttons and the background color
+let onTimerStart = function(){
   if (Number(minutes.value) == 0 && Number(seconds.value)==0) {return false}; // prevent the changes of styles if both minutes and seconds are 0 
     btnsArray.forEach(element => {
       element.classList.add("disable");}
@@ -173,7 +170,7 @@ let afterStart = function(){
 };
 
 //function that, at the end of the timer, changes the classes of the buttons and the background color to their previous value
-let timesOff = function() {
+let onTimerEnd = function() {
   btnsArray.forEach(element => {
     element.classList.remove("disable");}
   );
