@@ -87,7 +87,7 @@ p a:hover {
   color: #D61D1D;
 }
 
-#muteButton {
+#tickingButton {
   position: absolute;
   top: 200px;
   left: 70%;
@@ -100,7 +100,7 @@ p a:hover {
   background-color: #F23329;
   border: 2mm double rgba(0, 0, 0, 0.253);
 }
-#muteButton img {
+#tickingButton img {
   height: 65px;
   width: 65px;
 }
@@ -148,13 +148,13 @@ p a:hover {
     top: 90vh;
     font-size: 20px;
   }
-  #muteButton {
+  #tickingButton {
     top: 200px;
     left: 70%;
     width: 80px;
     height: 80px;
   }
-  #muteButton img {
+  #tickingButton img {
     height: 65px;
     width: 65px;
   }
@@ -198,13 +198,13 @@ p a:hover {
     top: 90vh;
     font-size: 18px;
   }
-  #muteButton {
+  #tickingButton {
     top: 20vh;
     left: 80%;
     width: 60px;
     height: 60px;
   }
-  #muteButton img {
+  #tickingButton img {
     height: 45px;
     width: 45px;
   }
